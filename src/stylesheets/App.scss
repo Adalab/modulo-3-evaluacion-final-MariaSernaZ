@@ -2,8 +2,22 @@
   list-style: none;
 }
 
+.headerLogo{
+  width: 200px;
+}
 
-.App {
+.characterCard{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  align-items:center;
+}
+.imgCharacter{
+  width: 100px;
+}
+
+/*.App {
   text-align: center;
 }
 
@@ -43,3 +57,4 @@
     transform: rotate(360deg);
   }
 }
+*/
