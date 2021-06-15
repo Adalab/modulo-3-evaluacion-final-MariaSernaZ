@@ -1,16 +1,23 @@
+import React, { useState, useEffect } from "react";
+import getDataFromApi from "../services/api";
+import CharacterList from "./CharacterList";
 import "../stylesheets/App.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    getDataFromApi().then((charactersApiData) => {
+      //console.log(charactersApiData);
+      setCharacters(charactersApiData);
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Hola Mundo <FontAwesomeIcon icon={faHeart} className="App-icon" />
-        </p>
-      </header>
-    </div>
+    <>
+      <h1>Rick and Morty</h1>
+      <CharacterList characters={characters} />
+    </>
   );
 }
 
