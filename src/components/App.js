@@ -35,12 +35,16 @@ function App() {
     }
   };
 
-  //render characterDetail
+  //render
   const renderCharacterDetail = (props) => {
+    //console.log("Router props", props); //para comparar el id seleccionado del API, necesitamos compararlos con el id del router
+    //Filtramos y seleccionamos un único objeto con find
+    const routerCharacterId = props.match.params.id;
+
     const characterDetail = characters.find((character) => {
-      return character.id === parseInt(props.match.params.id);
+      return character.id === parseInt(routerCharacterId);
     });
-    console.log(characterDetail);
+    //console.log(characterDetail); //Devuelve un objeto del personaje seleccionado
     return <CharacterDetail character={characterDetail} />;
   };
 
