@@ -4,6 +4,8 @@ import getDataFromApi from "../services/api";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
+import ls from "../services/localStorage";
+import NotFound from "./NotFound";
 import logoHeader from "../images/Rick&MortyLogo.png";
 import "../stylesheets/App.scss";
 
@@ -20,6 +22,14 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    ls.set("characters", characters);
+  }, [characters]);
+
+  useEffect(() => {
+    ls.set("filterName", filterName);
+  }, [filterName]);
+
   //Filtro por nombre
   const filteredCharacters = characters.filter((character) => {
     //console.log(character.name);
@@ -32,20 +42,26 @@ function App() {
     //console.log(inputData);
     if (inputData.key === "name") {
       setFilterName(inputData.value);
+    } else if (inputData.key !== "name") {
+      return <p>No hay ningún personaje que coincida con {inputData.value}</p>;
     }
   };
 
   //render
-  const renderCharacterDetail = (props) => {
+  const renderCharacterDetail = (routeProps) => {
     //console.log("Router props", props); //para comparar el id seleccionado del API, necesitamos compararlos con el id del router
-    //Filtramos y seleccionamos un único objeto con find
-    const routerCharacterId = props.match.params.id;
+    //Filtramos y seleccionamos un único objeto con find (será el personaje encontrado)
+    const routeCharacterId = routeProps.match.params.id;
 
     const characterDetail = characters.find((character) => {
-      return character.id === parseInt(routerCharacterId);
+      return character.id === parseInt(routeCharacterId);
     });
     //console.log(characterDetail); //Devuelve un objeto del personaje seleccionado
-    return <CharacterDetail character={characterDetail} />;
+    if (characterDetail) {
+      return <CharacterDetail character={characterDetail} />;
+    } else {
+      return <NotFound />;
+    }
   };
 
   return (
