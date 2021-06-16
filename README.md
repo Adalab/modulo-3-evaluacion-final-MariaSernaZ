@@ -1,4 +1,6 @@
-# Descripción
+# App de personajes de Rick and Morty
+
+## Descripción
 
 El proyecto consiste en desarrollar una página web con un listado de 20 personajes de Rick and Morty, obtenidos mediante la llamada a la API, quepodemos filtrar por su nombre. 
 
