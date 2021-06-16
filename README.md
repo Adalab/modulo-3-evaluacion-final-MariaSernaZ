@@ -20,6 +20,7 @@ Se puede acceder a la aplicación desde este enlace: https://beta.adalab.es/modu
  |  ├─ CharacterDetail
  |  ├─ NotFound
  
+```
 
 ## Funcionamiento:
 Al inicio de esta SPA (Single Page Application) encontramos el campo de búsqueda y la lista con los personajes de la API Rick and Morty. Podemos filtrar por nombre y al seleccionar un personaje, nos llevará a otra página dónde podremos ver con más detalle las características del personaje seleccionado. 
