@@ -23,11 +23,13 @@ Se puede acceder directamente a la aplicación a través del siguiente enlace: h
 ```
 
 ## Funcionamiento:
-Al inicio de esta SPA (Single Page Application) encontramos el campo de búsqueda y la lista con los personajes de la API Rick and Morty. Podemos filtrar por nombre y al seleccionar un personaje, nos llevará a otra página dónde podremos ver con más detalle las características del personaje seleccionado. 
+Al inicio de esta SPA (Single Page Application) encontramos el campo de búsqueda y la lista con los personajes de la API Rick and Morty. 
+
+Podemos filtrar por nombre y, al hacer click sobre un personaje, nos llevará a otra página donde veremos en detalle las características del personaje seleccionado. 
 
 
 ## Pasos a seguir para arrancar la web en local
 1. Clonar este repositorio
-2. Realizar la instalación de las dependencias mediante ### `npm install`
-3. Ejecutar ### `npm start` para abrir la ventana del explorador
+2. Realizar la instalación de las dependencias mediante `npm install`
+3. Ejecutar `npm start` para abrir una ventana en el explorador
 
