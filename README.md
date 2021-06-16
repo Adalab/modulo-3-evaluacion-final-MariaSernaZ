@@ -6,7 +6,7 @@ El proyecto consiste en desarrollar una página web con un listado de 20 persona
 
 La página está desarrollada principalmente en React.
 
-Se puede acceder a la aplicación desde este enlace: https://beta.adalab.es/modulo-3-evaluacion-final-MariaSernaZ/
+Se puede acceder directamente a la aplicación a través del siguiente enlace: https://beta.adalab.es/modulo-3-evaluacion-final-MariaSernaZ/
 
 ## Estructura de Componentes
 
