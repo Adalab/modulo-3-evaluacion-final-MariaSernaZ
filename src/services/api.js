@@ -11,6 +11,9 @@ const getDataFromApi = () => {
           name: character.name,
           species: character.species,
           id: character.id,
+          planet: character.origin.name,
+          episode: character.episode,
+          status: character.status,
         };
       });
       //console.log(characterData);
