@@ -5,23 +5,20 @@ import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
 import ls from "../services/localStorage";
-import NotFound from "./NotFound";
+import NotFoundCharacter from "./NotFoundCharacter";
 import logoHeader from "../images/Rick&MortyLogo.png";
 import "../stylesheets/App.scss";
 
 function App() {
   const [characters, setCharacters] = useState(ls.get("characters", []));
-
   const [filterName, setFilterName] = useState("");
 
   //Traemos los datos filtrados del API por imagen, nombre y especie. Actualizamos estado con setCharacters
   useEffect(() => {
-    if (characters.lenght === 0) {
-      getDataFromApi().then((charactersApiData) => {
-        //console.log(charactersApiData);
-        setCharacters(charactersApiData);
-      });
-    }
+    getDataFromApi().then((charactersApiData) => {
+      //console.log(charactersApiData);
+      setCharacters(charactersApiData);
+    });
   }, []);
 
   useEffect(() => {
@@ -44,8 +41,6 @@ function App() {
     //console.log(inputData);
     if (inputData.key === "name") {
       setFilterName(inputData.value);
-    } else if (inputData.key !== "name") {
-      return <p>No hay ningún personaje que coincida con {inputData.value}</p>;
     }
   };
 
@@ -62,7 +57,7 @@ function App() {
     if (characterDetail) {
       return <CharacterDetail character={characterDetail} />;
     } else {
-      return <NotFound />;
+      return <NotFoundCharacter />;
     }
   };
 
@@ -80,8 +75,16 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Filters filterName={filterName} handleFilter={handleFilter} />
-            <CharacterList characters={filteredCharacters} />
+
+            {filteredCharacters.length > 0 ? (
+              <CharacterList characters={filteredCharacters} />
+            ) : (
+              <p className="notFoundText">
+                No hay ningún personaje que coincida con la búsqueda
+              </p>
+            )}
           </Route>
+
           <Route
             path="/characterdetail/:id"
             render={renderCharacterDetail}></Route>

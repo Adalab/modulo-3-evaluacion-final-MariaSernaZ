@@ -18,7 +18,7 @@ Se puede acceder directamente a la aplicación a través del siguiente enlace: h
  |  ├─ CharacterList
  |      ├─ CharacterCard
  |  ├─ CharacterDetail
- |  ├─ NotFound
+ |  ├─ NotFoundCharacter
  
 ```
 
