@@ -25,18 +25,34 @@
 .inputSearch{
   width: 300px;
   margin: auto;
+  border: cadetblue solid 3px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
 }
+
+::placeholder { color: white; }
 
 .characterCard {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-column-gap: 40px;
-  grid-row-gap: 10px;
+  grid-row-gap: 30px;
 }
 
 .imgCharacter {
   width: 180px;
+}
+
+.backgroundCardList{
+  background-color: cadetblue;
+  width: fit-content;
+}
+
+.cardText{
+  padding: 0px 2px 5px 5px;
+  
 }
 
 .linkBack{

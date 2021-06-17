@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CharacterCard = (props) => {
   //console.log(props.character.id);
   return (
-    <article>
+    <article className="backgroundCardList">
       <Link to={`./characterDetail/${props.character.id}`}>
         <img
           className="imgCharacter"
@@ -13,8 +13,10 @@ const CharacterCard = (props) => {
           title={props.character.name}
         />
       </Link>
-      <h3>{props.character.name}</h3>
-      <p>{props.character.species}</p>
+      <div className="cardText">
+        <h3 className="nameCharacter">{props.character.name}</h3>
+        <p>{props.character.species}</p>
+      </div>
     </article>
   );
 };
