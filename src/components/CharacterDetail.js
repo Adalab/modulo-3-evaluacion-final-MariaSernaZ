@@ -6,20 +6,26 @@ const CharacterDetail = (props) => {
   const species = props.character.species;
 
   return (
-    <section>
-      <Link to="/">
-        <i className="fas fa-angle-left"></i> Volver
+    <section className="characterDetailWrap">
+      <Link to="/" className="linkBack">
+        <i className="fas fa-angle-left iconBack"></i> Volver
       </Link>
-      <article>
-        <img src={props.character.image} alt={props.character.name} />
-        <h3>{props.character.name}</h3>
-        <div>
-          <p>Especie: {props.character.species}</p>
-          {iconSpecies(species)}
+      <article className="characterDetail">
+        <img
+          className="imgCharacter"
+          src={props.character.image}
+          alt={props.character.name}
+        />
+        <div className="characterData">
+          <h4>{props.character.name}</h4>
+          <div>
+            <p>Especie: {props.character.species}</p>
+            {iconSpecies(species)}
+          </div>
+          <p>Planeta de origen: {props.character.planet}</p>
+          <p>Episodios: {props.character.episode.length}</p>
+          <p>Status: {props.character.status}</p>
         </div>
-        <p>Planeta de origen: {props.character.planet}</p>
-        <p>Episodios: {props.character.episode.length}</p>
-        <p>Status: {props.character.status}</p>
       </article>
     </section>
   );

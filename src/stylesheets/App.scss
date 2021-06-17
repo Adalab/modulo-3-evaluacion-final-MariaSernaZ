@@ -1,20 +1,78 @@
-.list{
+.list {
   list-style: none;
 }
 
-.headerLogo{
-  width: 200px;
+.headerLogo {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 
-.characterCard{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content:space-evenly;
-  align-items:center;
+.imgLogo {
+  width: 250px;
+  margin: auto;
+  padding-bottom: 15px;
 }
-.imgCharacter{
-  width: 100px;
+
+.formWrap{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-row-gap: 30px;
+  margin-bottom: 40px;
+}
+
+.inputSearch{
+  width: 300px;
+  margin: auto;
+}
+
+.characterCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 40px;
+  grid-row-gap: 10px;
+}
+
+.imgCharacter {
+  width: 180px;
+}
+
+.linkBack{
+  display: flex;
+  justify-content: center;
+  margin:auto;
+  text-decoration: none;
+  color: white;
+}
+
+.iconBack{
+  color:white;
+  padding: 10px;
+}
+
+/*.characterDetailWrap{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}*/
+
+.characterDetail{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: cadetblue;
+  width: fit-content;
+  padding: 20px;
+}
+
+.characterData{
+  padding-left: 30px;
+}
+
+.notFoundText{
+  text-align: center;
 }
 
 /*.App {

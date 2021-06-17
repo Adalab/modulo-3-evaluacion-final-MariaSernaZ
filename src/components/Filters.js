@@ -7,7 +7,7 @@ const Filters = (props) => {
   };
 
   return (
-    <form onSubmit={handleForm}>
+    <form onSubmit={handleForm} className="formWrap">
       <FilterByName
         filterName={props.filterName}
         handleFilter={props.handleFilter}

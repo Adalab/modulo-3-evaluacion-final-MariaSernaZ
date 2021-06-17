@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 const NotFound = () => {
   return (
     <main>
-      <p>El personaje que buscas no existe</p>
-      <Link to="/">Volver</Link>
+      <p className="notFoundText">El personaje que buscas no existe</p>
+      <Link to="/" className="linkBack">
+        {" "}
+        <i className="fas fa-angle-left iconBack"></i> Volver
+      </Link>
     </main>
   );
 };

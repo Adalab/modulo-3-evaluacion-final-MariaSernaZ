@@ -66,9 +66,9 @@ function App() {
 
   return (
     <>
-      <header>
+      <header className="headerLogo">
         <img
-          className="headerLogo"
+          className="imgLogo"
           src={logoHeader}
           alt="Rick and Morty logo"
           title="Rick and Morty logo"

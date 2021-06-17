@@ -12,8 +12,9 @@ const FilterByName = (props) => {
     <>
       <label htmlFor="name"></label>
       <input
+        className="inputSearch"
         type="text"
-        placeholder="Busca por nombre"
+        placeholder="Buscar por nombre"
         name="name"
         id="name"
         value={props.filterName}
