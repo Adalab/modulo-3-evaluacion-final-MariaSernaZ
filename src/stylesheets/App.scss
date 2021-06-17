@@ -39,10 +39,18 @@
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-column-gap: 40px;
   grid-row-gap: 30px;
+  @media all and (max-width:768px){
+    grid-template-columns: repeat(3, 1fr); 
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+  }
 }
 
 .imgCharacter {
   width: 180px;
+  @media all and (max-width:768px){
+    width: 100px;
+  }
 }
 
 .backgroundCardList{
@@ -52,7 +60,9 @@
 
 .cardText{
   padding: 0px 2px 5px 5px;
-  
+  @media all and (max-width: 768px){
+    padding: 0px 1px 2.5px 2.5px;
+  }
 }
 
 .linkBack{

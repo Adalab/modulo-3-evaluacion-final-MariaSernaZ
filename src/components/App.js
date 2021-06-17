@@ -10,16 +10,18 @@ import logoHeader from "../images/Rick&MortyLogo.png";
 import "../stylesheets/App.scss";
 
 function App() {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState(ls.get("characters", []));
 
   const [filterName, setFilterName] = useState("");
 
   //Traemos los datos filtrados del API por imagen, nombre y especie. Actualizamos estado con setCharacters
   useEffect(() => {
-    getDataFromApi().then((charactersApiData) => {
-      //console.log(charactersApiData);
-      setCharacters(charactersApiData);
-    });
+    if (characters.lenght === 0) {
+      getDataFromApi().then((charactersApiData) => {
+        //console.log(charactersApiData);
+        setCharacters(charactersApiData);
+      });
+    }
   }, []);
 
   useEffect(() => {
