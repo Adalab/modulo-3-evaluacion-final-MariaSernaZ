@@ -16,6 +16,7 @@ const CharacterCard = (props) => {
       <div className="cardText">
         <h3>{props.character.name}</h3>
         <p>{props.character.species}</p>
+        <p>{props.character.episode.length}</p>
       </div>
     </article>
   );

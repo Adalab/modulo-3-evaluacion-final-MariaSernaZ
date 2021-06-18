@@ -12,6 +12,7 @@ import "../stylesheets/App.scss";
 function App() {
   const [characters, setCharacters] = useState(ls.get("characters", []));
   const [filterName, setFilterName] = useState("");
+  const [filterEpisode, setFilterEpisode] = useState(0);
 
   //Traemos los datos filtrados del API por imagen, nombre y especie. Actualizamos estado con setCharacters
   useEffect(() => {
@@ -29,11 +30,23 @@ function App() {
     ls.set("filterName", filterName);
   }, [filterName]);
 
+  useEffect(() => {
+    ls.set("filterEpisode", filterEpisode);
+  }, [filterEpisode]);
+
   //Filtro por nombre
-  const filteredCharacters = characters.filter((character) => {
-    //console.log(character.name);
-    return character.name.toUpperCase().includes(filterName.toUpperCase());
-  });
+  const filteredCharacters = characters
+    .filter((character) => {
+      //console.log(character.name);
+      return character.name.toUpperCase().includes(filterName.toUpperCase());
+    })
+    .filter((character) => {
+      if (filterEpisode === 0) {
+        return true;
+      } else {
+        return character.episode.length === parseInt(filterEpisode);
+      }
+    });
 
   //event
   //Con inputData recibimos los datos que hemos pasado por lifting desde FilterByName: value y key
@@ -41,6 +54,8 @@ function App() {
     //console.log(inputData);
     if (inputData.key === "name") {
       setFilterName(inputData.value);
+    } else if (inputData.key === "episode") {
+      setFilterEpisode(inputData.value);
     }
   };
 
